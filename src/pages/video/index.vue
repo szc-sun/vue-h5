@@ -47,7 +47,7 @@
           </div>
           <div class="video">
             <div v-for="(item2,index2) in item.videoData" :key="index2" class="video-item" :class="{'video-item-active':active.index === index2}">
-              <button class="show-btn" size="mini" @click="setActiveIndex(index2,item2)">{{ item2.name }}</button>
+              <van-button plain type="primary" class="show-btn" size="small" @click="setActiveIndex(index2,item2)">{{ item2.name }}</van-button>
             </div>
           </div>
         </template>
@@ -92,6 +92,7 @@ export default {
               'https://cdn.letv-cdn.com/2018/12/05/JOCeEEUuoteFrjCg/playlist.m3u8' // url地址，从别的博主那看来的地址，亲测可用
           }
         ],
+        crossOrigin: 'anonymous',
         hls: true,
         poster: 'http://pic33.nipic.com/20131007/13639685_123501617185_2.jpg', // 你的封面地址
         width: document.documentElement.clientWidth, // 播放器宽度
@@ -197,6 +198,7 @@ export default {
 			}
 		}
 		.video-list{
+      padding:0.2rem 0.1rem;
 			.detail-item{
 				margin-bottom:0.1rem;
 				.detail{
